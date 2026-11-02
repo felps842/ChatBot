@@ -2,7 +2,7 @@
 dialogo = [ {"saudacao" : ["oi", "ola", "olá", "eae", "eai", "bom dia", "bomdia", "bom-dia", "boa tarde", "boatarde", "boa-tarde", "boa noite", "boanoite", "boa-noite"],
              "resposta" : "Olá! Sou a Paimon, sua companheira de viagem\nComo posso ajudar?"},
             
-            {"despedia" : ["tchau"],
+            {"despedida" : ["tchau"],
              "resposta" : "Até mais Viajante!"},
              
             {"elementos" : ["elementos", "elemento", "anemo", "geo", "electro", "dendro", "hydro", "pyro", "cryo"],
@@ -17,18 +17,23 @@ dialogo = [ {"saudacao" : ["oi", "ola", "olá", "eae", "eai", "bom dia", "bomdia
 mensagemUsuario = str(input("Usuário: ")).strip().lower()
 
 if any(saudacao in mensagemUsuario for saudacao in dialogo[0]["saudacao"]):
+    print("INTENÇÃO: Saudação")
     print(dialogo[0]["resposta"])
 
 elif any(despedida in mensagemUsuario for despedida in dialogo[1]["despedida"]):
+    print("INTENÇÃO: Despedida")
     print(dialogo[1]["resposta"])
 
 elif any(elementos in mensagemUsuario for elementos in dialogo[2]["elementos"]):
+    print("INTENÇÃO: Elementos")
     print(dialogo[2]["resposta"])
 
 elif any(armas in mensagemUsuario for armas in dialogo[3]["armas"]):
+    print("INTENÇÃO: Armas")
     print(dialogo[3]["resposta"])
 
 elif any(artefatos in mensagemUsuario for artefatos in dialogo[4]["artefatos"]):
+    print("INTENÇÃO: Artefatos")
     print(dialogo[4]["resposta"])
 
 else:
